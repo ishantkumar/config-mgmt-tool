@@ -25,12 +25,12 @@ where   `-i` option is to install a app_package and `-u` is to uninstall the app
 - Execute below commands .
 
 ```sh
-
-bash remote_init.sh <hostname/ip> <host_password> <package_to_install>
+chmod +x remote_init.sh
+./remote_init.sh <hostname/ip> <host_password> <package_to_install>
 ```
 
 Example :
 ```sh
 
- bash remote_init.sh 192.168.9.34 EXAMPLEPASSWORD php_app_package
+./remote_init.sh 192.168.9.34 EXAMPLEPASSWORD php_app_package
 ```
