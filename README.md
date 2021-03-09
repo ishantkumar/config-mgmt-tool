@@ -21,7 +21,7 @@ where   `-i` option is to install a app_package and `-u` is to uninstall the app
 
 ### Use it to configure servers remotely
 
-- Clone this repository
+- Clone this repository on your local machine
 - Execute below commands .
 
 ```sh
