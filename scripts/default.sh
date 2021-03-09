@@ -1,6 +1,16 @@
+while getopts i:u: flag
+do
+    case "${flag}" in
+        i) install=${OPTARG};;
+        u) uninstall=${OPTARG};;
+        *) echo "please see the usage \n use -i for install_package and -u to uninstall package";;
+    esac
+done
+
+
 ## Parameters
-package_type=$1
-uninstall_package_type=$2
+package_type=$install
+uninstall_package_type=$uninstall
 
 ## Install the required packages mentioned in config-mgmt-tool/package_list/packages file 
 bash install.sh $package_type
