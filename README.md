@@ -31,6 +31,6 @@ chmod +x remote_init.sh
 
 Example :
 ```sh
-
+chmod +x remote_init.sh
 ./remote_init.sh 192.168.9.34 EXAMPLEPASSWORD php_app_package
 ```
