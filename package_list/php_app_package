@@ -1,3 +1,4 @@
 php
 libapache2-mod-php
 apache2
+nginx
