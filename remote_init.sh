@@ -1,6 +1,23 @@
-php_app_package=$1
-java_app_package=$2
-server_name=$3
-git clone https://github.com/ishantkumar/config-mgmt-tool.git
-cd config-mgmt-tool/scripts
-bash default.sh -i $php_app_package -u $java_app_package
+#!/usr/bin/expect
+
+
+set server_name [lindex $argv 0]
+set password [lindex $argv 1]
+set install_package [lindex $argv 2]
+
+
+spawn scp -o StrictHostKeyChecking=no remote_init.sh root@$server_name:/root/
+expect "password"
+send "$password\r"
+interact
+
+spawn ssh -o StrictHostKeyChecking=no root@$server_name chmod +x /root/remote_init.sh
+expect "password"
+send "$password\r"
+interact
+
+spawn ssh -o StrictHostKeyChecking=no root@$server_name /root/remote_init.sh -i $install_package
+expect "password"
+send "$password\r"
+interact
+
